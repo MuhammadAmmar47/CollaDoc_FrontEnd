@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --output-path=dist --base-href=/CollaDoc/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:CollaDoc_FrontEnd": "node dist/colla-doc-front-end/server/server.mjs"
