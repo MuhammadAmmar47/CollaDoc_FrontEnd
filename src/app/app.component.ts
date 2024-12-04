@@ -1,49 +1,19 @@
-import { MatInputModule } from '@angular/material/input';
 import { Component } from '@angular/core';
-import {
-  Form,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { APIService } from '../services/API.service';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [
-    RouterOutlet,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    ReactiveFormsModule,
-  ],
+  imports: [RouterOutlet, LoginComponent, HomeComponent],
 })
 export class AppComponent {
-  loginForm: FormGroup;
-  constructor(private _service: APIService, private _formBuilder: FormBuilder) {
-    this.loginForm = this._formBuilder.group({
-      name: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-  }
-  title = 'CollaDoc_FrontEnd';
-  hide = true;
+  constructor() {}
+  isLogin: boolean = false;
 
-  ngOnIt() {}
-  submit() {
-    if (this.loginForm.valid) {
-      this._service.getToken(this.loginForm.value).subscribe((data) => {
-        const token = data;
-      });
-    }
+  lodingCompleete(value: boolean) {
+    this.isLogin = value;
   }
 }

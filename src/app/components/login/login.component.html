@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h3>Login Here</h3>
+
+    <label for="username">Username</label>
+    <input
+      type="text"
+      placeholder="Email or Phone"
+      id="username"
+      formControlName="name"
+      required
+    />
+
+    <label for="password">Password</label>
+    <div>
+      <input
+        type="password"
+        placeholder="Password"
+        id="password"
+        formControlName="password"
+        [type]="hide ? 'password' : 'text'"
+        required
+      />
+      <!-- <span
+    mat-icon-button
+      matSuffix
+      style="cursor: pointer"
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </span> -->
+    </div>
+    <button type="submit">Log In</button>
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i> Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+    </div>
+  </form>
+</div>

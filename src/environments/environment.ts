@@ -9,7 +9,7 @@ export const environment = {
   production: false,
   apiBaseUrl:
     //window.location.origin +
-    'https://9b08-39-46-228-201.ngrok-free.app/Services_A',
+    'https://6b44-39-46-228-201.ngrok-free.app/Services_A',
 };
 
 /*
